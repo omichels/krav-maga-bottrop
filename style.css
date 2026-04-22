@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+
 :root {
-    --primary-color: #2e7d32;
-    --primary-dark: #1b5e20;
-    --primary-light: #43a047;
-    --secondary-color: #1a1a1a;
-    --bg-dark: #0f0f0f;
-    --bg-medium: #1e1e1e;
-    --text-color: #e0e0e0;
-    --text-light: #b0b0b0;
-    --bg-light: #2a2a2a;
+    --primary-color: #1D9E75;
+    --primary-dark: #157A5C;
+    --primary-light: #2EBF91;
+    --accent-green: #4ADE80;
+    --secondary-color: #0A0A0A;
+    --bg-dark: #050505;
+    --bg-medium: #121212;
+    --text-color: #E5E5E5;
+    --text-light: #9CA3AF;
+    --bg-light: #1A1A1A;
     --white: #ffffff;
-    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow: rgba(0, 0, 0, 0.5);
 }
 
 * {
@@ -23,10 +26,18 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background: var(--bg-dark);
+    font-weight: 400;
+}
+
+h1, h2, h3, .display-text {
+    font-family: 'Bebas Neue', 'Arial Black', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .container {
@@ -126,29 +137,35 @@ body {
 }
 
 .hero-title {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0,0,0,0.8);
+    font-size: 5.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+    line-height: 1;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    opacity: 0.95;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    text-transform: none;
+    letter-spacing: normal;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
 }
 
 .hero-description {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    opacity: 0.9;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+    font-weight: 400;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.9);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
 }
@@ -156,25 +173,31 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 1rem 2.5rem;
+    padding: 1.1rem 3rem;
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 0;
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
 }
 
 .btn-primary {
     background: var(--primary-color);
     color: var(--white);
+    border: 2px solid var(--primary-color);
 }
 
 .btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-    background: var(--primary-dark);
+    background: var(--primary-light);
+    border-color: var(--primary-light);
+    box-shadow: 0 0 20px rgba(29, 158, 117, 0.4);
 }
 
 .btn-secondary {
@@ -184,10 +207,8 @@ body {
 }
 
 .btn-secondary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     background: var(--white);
-    color: var(--primary-color);
+    color: var(--bg-dark);
 }
 
 /* Sections */
@@ -203,9 +224,19 @@ body {
 
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: inherit;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--white);
+    line-height: 1.1;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 700px;
+    margin: 0 auto 4rem;
+    font-weight: 300;
 }
 
 /* About Section */
@@ -224,34 +255,52 @@ body {
 }
 
 .about-card {
-    background: var(--bg-dark);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px var(--shadow);
+    background: var(--bg-medium);
+    padding: 3rem 2rem;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(46, 125, 50, 0.2);
+    border: 2px solid var(--bg-light);
+    position: relative;
+}
+
+.about-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--primary-color);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.about-card:hover::before {
+    transform: scaleY(1);
 }
 
 .about-card:hover {
-    transform: translateY(-10px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
 }
 
 .card-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
 }
 
 .about-card h3 {
-    color: var(--primary-light);
+    color: var(--white);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .about-card p {
     color: var(--text-light);
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* Training Section */
@@ -411,6 +460,37 @@ body {
     background: var(--bg-medium);
 }
 
+/* Stats Section */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem;
+    margin: 4rem 0;
+    padding: 3rem 0;
+    border-top: 1px solid var(--bg-light);
+    border-bottom: 1px solid var(--bg-light);
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 4rem;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
 /* License Section */
 .license-intro {
     text-align: center;
@@ -428,29 +508,89 @@ body {
 }
 
 .license-card {
-    background: var(--bg-dark);
-    padding: 2rem;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 5px 15px var(--shadow);
+    background: var(--bg-medium);
+    padding: 3rem 2rem;
+    border-radius: 0;
+    text-align: left;
+    box-shadow: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(46, 125, 50, 0.2);
+    border: 2px solid var(--bg-light);
+    position: relative;
+}
+
+.license-card.featured {
+    border-color: var(--primary-color);
+    background: var(--bg-dark);
+}
+
+.license-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--bg-light);
+    transition: all 0.3s ease;
+}
+
+.license-card.featured::before,
+.license-card:hover::before {
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-green) 100%);
 }
 
 .license-card:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     border-color: var(--primary-color);
-    box-shadow: 0 8px 25px rgba(46, 125, 50, 0.3);
+}
+
+.license-badge {
+    display: inline-block;
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.3rem 0.8rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .license-card h3 {
-    color: var(--primary-light);
+    color: var(--white);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
+}
+
+.license-price {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
 }
 
 .license-card p {
     color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.license-features {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.license-features li {
+    padding: 0.75rem 0;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--bg-light);
+    font-size: 0.95rem;
+}
+
+.license-features li:before {
+    content: '✓';
+    color: var(--accent-green);
+    font-weight: bold;
+    margin-right: 0.75rem;
 }
 
 .license-cta {
@@ -472,6 +612,98 @@ body {
     color: var(--text-light);
     font-size: 1.1rem;
     margin-bottom: 2rem;
+}
+
+/* Process Section */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    position: relative;
+}
+
+.process-step {
+    position: relative;
+    padding: 2rem;
+    text-align: center;
+}
+
+.process-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    color: var(--bg-light);
+    line-height: 1;
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+.process-step:hover .process-number {
+    color: var(--primary-color);
+}
+
+.process-step h3 {
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+
+.process-step p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* CTA Banner */
+.cta-banner {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+    padding: 5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="1200" height="400" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+}
+
+.cta-banner .container {
+    position: relative;
+    z-index: 1;
+}
+
+.cta-banner h2 {
+    font-size: 3.5rem;
+    color: var(--white);
+    margin-bottom: 1.5rem;
+}
+
+.cta-banner p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-banner .btn {
+    background: var(--white);
+    color: var(--primary-color);
+    border-color: var(--white);
+}
+
+.cta-banner .btn:hover {
+    background: var(--bg-dark);
+    color: var(--white);
+    border-color: var(--white);
 }
 
 /* Footer */
@@ -543,11 +775,30 @@ body {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .about-grid,
+    .license-grid,
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
     }
 
     .training-content,
