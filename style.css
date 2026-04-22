@@ -113,7 +113,7 @@ h1, h2, h3, .display-text {
 .hero {
     position: relative;
     height: 100vh;
-    background: url('fitsafe.jpg') center center/cover no-repeat;
+    background: var(--bg-dark) url('fitsafe.jpg') center center/contain no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,6 +134,7 @@ h1, h2, h3, .display-text {
 .hero-content {
     position: relative;
     z-index: 1;
+    margin-top: 45vh;
 }
 
 .hero-title {
